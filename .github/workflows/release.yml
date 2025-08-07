@@ -44,7 +44,8 @@ jobs:
 
       - name: Merge operator index
         run: |
-          # Switch to gh-pages branch to work with the index
+          # Checkout fresh copy of gh-pages branch
+          git fetch origin gh-pages
           git checkout gh-pages
           
           # Download operator index.yaml
