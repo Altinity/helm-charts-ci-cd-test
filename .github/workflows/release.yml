@@ -33,25 +33,50 @@ jobs:
           helm repo add altinity-operator https://docs.altinity.com/clickhouse-operator
           helm repo add altinity https://helm.altinity.com/
 
-      - name: Run chart-releaser
-        uses: helm/chart-releaser-action@v1.6.0
-        with:
-          charts_dir: charts
-          skip_existing: true
-        env:
-          CR_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
-        continue-on-error: false
-
-      - name: Merge operator index
+      - name: Package and release charts
         run: |
-          # Checkout fresh copy of gh-pages branch
-          git fetch origin gh-pages
+          # Find changed charts
+          for chart_dir in charts/*; do
+            if [[ -d "$chart_dir" ]]; then
+              chart_name=$(basename "$chart_dir")
+              chart_version=$(grep '^version:' "$chart_dir/Chart.yaml" | cut -d' ' -f2)
+              
+              # Check if this version already exists as a release
+              if gh release view "${chart_name}-${chart_version}" >/dev/null 2>&1; then
+                echo "Release ${chart_name}-${chart_version} already exists, skipping..."
+                continue
+              fi
+              
+              echo "Processing chart: $chart_name version $chart_version"
+              
+              # Package the chart
+              cr package "$chart_dir"
+              
+              # Create GitHub release
+              gh release create "${chart_name}-${chart_version}" \
+                --title "${chart_name}-${chart_version}" \
+                --notes "Release of ${chart_name} chart version ${chart_version}"
+              
+              # Upload chart package to release
+              gh release upload "${chart_name}-${chart_version}" \
+                .cr-release-packages/"${chart_name}-${chart_version}.tgz"
+            fi
+          done
+        env:
+          GH_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
+
+      - name: Update Helm repository index
+        run: |
+          # Switch to gh-pages branch
           git checkout gh-pages
           
-          # Download operator index.yaml
+          # Generate index from releases
+          cr index --owner ${{ github.repository_owner }} --git-repo $(basename ${{ github.repository }}) --pages-branch gh-pages
+          
+          # Download and merge operator index
           curl -sL https://docs.altinity.com/clickhouse-operator/index.yaml -o operator-index.yaml
           
-          # Use chart-releaser to merge the indexes
+          # Merge the indexes
           if [ -f "index.yaml" ]; then
             cr index --merge operator-index.yaml --index-path index.yaml
           else
@@ -63,5 +88,7 @@ jobs:
           
           # Commit and push the updated index
           git add index.yaml
-          git commit -m "Merge operator charts index" || echo "No changes to commit"
+          git commit -m "Update Helm repository index with operator charts" || echo "No changes to commit"
           git push origin gh-pages
+        env:
+          CR_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
