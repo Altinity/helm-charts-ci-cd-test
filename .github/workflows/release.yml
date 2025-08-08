@@ -67,28 +67,29 @@ jobs:
 
       - name: Update Helm repository index
         run: |
+          # Generate index from releases BEFORE switching branches
+          cr index --owner ${{ github.repository_owner }} --git-repo $(basename ${{ github.repository }}) --pages-branch gh-pages
+          
+          # Save the generated index
+          cp index.yaml charts-index.yaml
+          
           # Fetch gh-pages branch
           git fetch origin gh-pages:gh-pages
           
           # Switch to gh-pages branch (force checkout to avoid conflicts)
           git checkout -f gh-pages
           
-          # Generate index from releases
-          cr index --owner ${{ github.repository_owner }} --git-repo $(basename ${{ github.repository }}) --pages-branch gh-pages
+          # Restore the charts index
+          cp charts-index.yaml index.yaml
           
-          # Download and merge operator index
+          # Download operator index
           curl -sL https://docs.altinity.com/clickhouse-operator/index.yaml -o operator-index.yaml
           
-          # Merge the indexes using helm repo index
-          if [ -f "index.yaml" ]; then
-            # Use helm repo index with --merge flag to combine indexes
-            helm repo index . --merge operator-index.yaml
-          else
-            cp operator-index.yaml index.yaml
-          fi
+          # Merge the operator index into our charts index
+          helm repo index . --merge index.yaml --merge operator-index.yaml
           
           # Clean up
-          rm -f operator-index.yaml
+          rm -f operator-index.yaml charts-index.yaml
           
           # Commit and push the updated index
           git add index.yaml
