@@ -27,6 +27,30 @@ jobs:
           helm repo add altinity-operator https://docs.altinity.com/clickhouse-operator
           helm repo add altinity https://helm.altinity.com/
 
+      - name: Download Latest ClickHouse Operator Chart
+        run: |
+          # Get the latest version from the operator repo index
+          curl -sL https://docs.altinity.com/clickhouse-operator/index.yaml -o operator-index.yaml
+          
+          # Extract the latest version and URL
+          LATEST_VERSION=$(yq eval '.entries.altinity-clickhouse-operator[0].version' operator-index.yaml)
+          LATEST_URL=$(yq eval '.entries.altinity-clickhouse-operator[0].urls[0]' operator-index.yaml)
+          
+          echo "Downloading ClickHouse Operator version $LATEST_VERSION from $LATEST_URL"
+          
+          # Create operator chart directory if it doesn't exist
+          mkdir -p charts/altinity-clickhouse-operator
+          
+          # Download and extract the tarball
+          curl -sL "$LATEST_URL" -o "charts/altinity-clickhouse-operator-${LATEST_VERSION}.tgz"
+          tar -xzf "charts/altinity-clickhouse-operator-${LATEST_VERSION}.tgz" -C charts/
+          
+          # Clean up
+          rm -f operator-index.yaml
+          rm -f "charts/altinity-clickhouse-operator-${LATEST_VERSION}.tgz"
+          
+          echo "ClickHouse Operator chart $LATEST_VERSION placed in charts directory"
+
       - name: Run chart-releaser
         uses: helm/chart-releaser-action@v1.6.0
         with:
