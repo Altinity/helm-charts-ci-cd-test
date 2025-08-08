@@ -67,8 +67,11 @@ jobs:
 
       - name: Update Helm repository index
         run: |
-          # Switch to gh-pages branch
-          git checkout gh-pages
+          # Fetch gh-pages branch
+          git fetch origin gh-pages:gh-pages
+          
+          # Switch to gh-pages branch (force checkout to avoid conflicts)
+          git checkout -f gh-pages
           
           # Generate index from releases
           cr index --owner ${{ github.repository_owner }} --git-repo $(basename ${{ github.repository }}) --pages-branch gh-pages
