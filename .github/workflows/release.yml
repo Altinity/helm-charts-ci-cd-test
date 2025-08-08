@@ -79,9 +79,10 @@ jobs:
           # Download and merge operator index
           curl -sL https://docs.altinity.com/clickhouse-operator/index.yaml -o operator-index.yaml
           
-          # Merge the indexes
+          # Merge the indexes using helm repo index
           if [ -f "index.yaml" ]; then
-            cr index --merge operator-index.yaml --index-path index.yaml
+            # Use helm repo index with --merge flag to combine indexes
+            helm repo index . --merge operator-index.yaml
           else
             cp operator-index.yaml index.yaml
           fi
