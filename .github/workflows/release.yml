@@ -70,8 +70,8 @@ jobs:
           # Generate index from releases BEFORE switching branches
           cr index --owner ${{ github.repository_owner }} --git-repo $(basename ${{ github.repository }}) --pages-branch gh-pages
           
-          # Save the generated index
-          cp index.yaml charts-index.yaml
+          # Save the generated index from .cr-index directory
+          cp .cr-index/index.yaml charts-index.yaml
           
           # Fetch gh-pages branch
           git fetch origin gh-pages:gh-pages
