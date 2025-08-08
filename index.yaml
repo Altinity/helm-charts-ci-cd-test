@@ -1,0 +1,345 @@
+apiVersion: v1
+entries:
+  clickhouse:
+  - apiVersion: v2
+    appVersion: 24.8.14.10459
+    created: "2025-07-17T22:13:43.207448997Z"
+    dependencies:
+    - alias: operator
+      condition: operator.enabled
+      name: altinity-clickhouse-operator
+      repository: https://docs.altinity.com/clickhouse-operator
+      version: 0.25.2
+    description: A Helm chart for creating a ClickHouse® Cluster with the Altinity
+      Operator for ClickHouse
+    digest: bc58ee5cbd80d5fcbf89d1bd41488b3ae98a58f1773119a8df7ac5db19d7f813
+    name: clickhouse
+    type: application
+    urls:
+    - https://github.com/Altinity/helm-charts/releases/download/clickhouse-0.2.6/clickhouse-0.2.6.tgz
+    version: 0.2.6
+  - apiVersion: v2
+    appVersion: 24.8.14.10459
+    created: "2025-05-13T19:54:09.914767472Z"
+    dependencies:
+    - alias: operator
+      condition: operator.enabled
+      name: altinity-clickhouse-operator
+      repository: https://docs.altinity.com/clickhouse-operator
+      version: 0.24.3
+    description: A Helm chart for creating a ClickHouse® Cluster with the Altinity
+      Operator for ClickHouse
+    digest: e03881a5a7ea697180a0ebb9a19d782c5e0fb48cffbd4589df3035851391b1e2
+    name: clickhouse
+    type: application
+    urls:
+    - https://github.com/Altinity/helm-charts/releases/download/clickhouse-0.2.5/clickhouse-0.2.5.tgz
+    version: 0.2.5
+  - apiVersion: v2
+    appVersion: 24.8.14.10459
+    created: "2025-05-11T01:11:04.869556683Z"
+    dependencies:
+    - alias: operator
+      condition: operator.enabled
+      name: altinity-clickhouse-operator
+      repository: https://docs.altinity.com/clickhouse-operator
+      version: 0.24.3
+    description: A Helm chart for creating a ClickHouse® Cluster with the Altinity
+      Operator for ClickHouse
+    digest: c15e6c9a627799e3ee1ae2e89a3a885502def8e15de9a7f7ca6fa622386e5143
+    name: clickhouse
+    type: application
+    urls:
+    - https://github.com/Altinity/helm-charts/releases/download/clickhouse-0.2.4/clickhouse-0.2.4.tgz
+    version: 0.2.4
+  - apiVersion: v2
+    appVersion: 24.3.12.76
+    created: "2025-04-04T01:22:06.606658013Z"
+    dependencies:
+    - alias: operator
+      condition: operator.enabled
+      name: altinity-clickhouse-operator
+      repository: https://docs.altinity.com/clickhouse-operator
+      version: 0.24.3
+    description: A Helm chart for creating a ClickHouse® Cluster with the Altinity
+      Operator for ClickHouse
+    digest: 9a668cbbbe3065100fc76233b20942f9c672cefe6ea03b1d5c05af90f76dc6fe
+    name: clickhouse
+    type: application
+    urls:
+    - https://github.com/Altinity/helm-charts/releases/download/clickhouse-0.2.3/clickhouse-0.2.3.tgz
+    version: 0.2.3
+  - apiVersion: v2
+    appVersion: 24.3.12.76
+    created: "2025-03-12T15:36:10.726372912Z"
+    dependencies:
+    - alias: operator
+      condition: operator.enabled
+      name: altinity-clickhouse-operator
+      repository: https://docs.altinity.com/clickhouse-operator
+      version: 0.24.3
+    description: A Helm chart for creating a ClickHouse® Cluster with the Altinity
+      Operator for ClickHouse
+    digest: d0057311348638c53bf1b3bc575767eda3a10923113f8f5d4c7021bfff5de387
+    name: clickhouse
+    type: application
+    urls:
+    - https://github.com/Altinity/helm-charts/releases/download/clickhouse-0.2.2/clickhouse-0.2.2.tgz
+    version: 0.2.2
+  - apiVersion: v2
+    appVersion: 24.3.12.76
+    created: "2025-02-10T20:06:05.553619449Z"
+    dependencies:
+    - alias: operator
+      condition: operator.enabled
+      name: altinity-clickhouse-operator
+      repository: https://docs.altinity.com/clickhouse-operator
+      version: 0.24.3
+    description: A Helm chart for creating a ClickHouse® Cluster with the Altinity
+      Operator for ClickHouse
+    digest: 1bff6cafea5eb0ed66b7e4d0ffdccab93a14c32cd236ce8f09855f18faba4444
+    name: clickhouse
+    type: application
+    urls:
+    - https://github.com/Altinity/helm-charts/releases/download/clickhouse-0.2.0/clickhouse-0.2.0.tgz
+    version: 0.2.0
+  - apiVersion: v2
+    appVersion: 23.8.8.21
+    created: "2024-12-02T18:26:16.897636167Z"
+    dependencies:
+    - alias: keeper
+      condition: keeper.enabled
+      name: clickhouse-keeper-sts
+      repository: https://helm.altinity.com
+      version: 0.1.5
+    - alias: operator
+      condition: operator.enabled
+      name: altinity-clickhouse-operator
+      repository: https://docs.altinity.com/clickhouse-operator
+      version: 0.23.6
+    description: A Helm chart for creating a ClickHouse® Cluster with the Altinity
+      Operator for ClickHouse
+    digest: 1fde10f100545101b5ff10181f73c023eebb68a32a7b2cd4886fdd60f054b30a
+    name: clickhouse
+    type: application
+    urls:
+    - https://github.com/Altinity/helm-charts/releases/download/clickhouse-0.1.7/clickhouse-0.1.7.tgz
+    version: 0.1.7
+  - apiVersion: v2
+    appVersion: 23.8.8.21
+    created: "2024-12-02T18:24:12.296738591Z"
+    dependencies:
+    - alias: keeper
+      condition: keeper.enabled
+      name: clickhouse-keeper-sts
+      repository: https://helm.altinity.com
+      version: 0.1.3
+    - alias: operator
+      condition: operator.enabled
+      name: altinity-clickhouse-operator
+      repository: https://docs.altinity.com/clickhouse-operator
+      version: 0.23.6
+    description: A Helm chart for creating a ClickHouse® Cluster with the Altinity
+      Operator for ClickHouse
+    digest: c9872d4eb87ddd3459a933db15710caf7b99aaae28cc34b49ee0ceaf54e600d4
+    name: clickhouse
+    type: application
+    urls:
+    - https://github.com/Altinity/helm-charts/releases/download/clickhouse-0.1.6/clickhouse-0.1.6.tgz
+    version: 0.1.6
+  - apiVersion: v2
+    appVersion: 23.8.8.21
+    created: "2024-09-30T16:52:15.48539426Z"
+    dependencies:
+    - alias: keeper
+      condition: keeper.enabled
+      name: clickhouse-keeper-sts
+      repository: https://helm.altinity.com
+      version: 0.1.3
+    - alias: operator
+      condition: operator.enabled
+      name: altinity-clickhouse-operator
+      repository: https://docs.altinity.com/clickhouse-operator
+      version: 0.23.6
+    description: A Helm chart for creating a ClickHouse Cluster with the Altinity
+      Operator for ClickHouse
+    digest: ee713a3c987ec0d03ee8dd72e4932d47829657a6784568bdfffa6f0a4021097a
+    name: clickhouse
+    type: application
+    urls:
+    - https://github.com/Altinity/helm-charts/releases/download/clickhouse-0.1.3/clickhouse-0.1.3.tgz
+    version: 0.1.3
+  - apiVersion: v2
+    appVersion: 23.8.8.21
+    created: "2024-09-30T16:50:41.95858717Z"
+    dependencies:
+    - alias: keeper
+      condition: keeper.enabled
+      name: clickhouse-keeper-sts
+      repository: file://../clickhouse-keeper-sts
+      version: 0.1.3
+    - alias: operator
+      condition: operator.enabled
+      name: altinity-clickhouse-operator
+      repository: https://docs.altinity.com/clickhouse-operator
+      version: 0.23.6
+    description: A Helm chart for creating a ClickHouse Cluster with the Altinity
+      Operator for ClickHouse
+    digest: fe87f595292275b3c87fccc9cd6e230b7cc6ebfa55ba28d6562a62e48ae6ac2b
+    name: clickhouse
+    type: application
+    urls:
+    - https://github.com/Altinity/helm-charts/releases/download/clickhouse-0.1.2/clickhouse-0.1.2.tgz
+    version: 0.1.2
+  clickhouse-eks:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2024-12-10T17:34:15.152801081Z"
+    description: A Helm chart for ClickHouse running on AWS EKS across AZs using a
+      nodeSelector to pin resources to run on specific VMs types
+    digest: de7745abbf68e4433eb1eb21ecebb17eaf77eb70fc6fbb3b0bc7dde92e7f3319
+    name: clickhouse-eks
+    type: application
+    urls:
+    - https://github.com/Altinity/helm-charts/releases/download/clickhouse-eks-0.1.8/clickhouse-eks-0.1.8.tgz
+    version: 0.1.8
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2024-12-02T18:00:22.919829891Z"
+    description: A Helm chart for ClickHouse running on AWS EKS across AZs using a
+      nodeSelector to pin resources to run on specific VMs types
+    digest: eae19b74dd354a93e3381ce0400115811f02dbc0915d99bc4929436236fd4336
+    name: clickhouse-eks
+    type: application
+    urls:
+    - https://github.com/Altinity/helm-charts/releases/download/clickhouse-eks-0.1.7/clickhouse-eks-0.1.7.tgz
+    version: 0.1.7
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2024-11-25T13:14:08.99515134Z"
+    description: A Helm chart for ClickHouse running on AWS EKS across AZs using a
+      nodeSelector to pin resources to run on specific VMs types
+    digest: 1c7c9183e827ccdfd7de02e775354f90713c236497c17765df55a0a65341571f
+    name: clickhouse-eks
+    type: application
+    urls:
+    - https://github.com/Altinity/helm-charts/releases/download/clickhouse-eks-0.1.6/clickhouse-eks-0.1.6.tgz
+    version: 0.1.6
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2024-11-08T19:04:16.380022801Z"
+    description: A Helm chart for ClickHouse running on AWS EKS across AZs using a
+      nodeSelector to pin resources to run on specific VMs types
+    digest: 8c9c3d89a31c5db4f5ef6a77856413944a9da72e32a9c6037db827c576560419
+    name: clickhouse-eks
+    type: application
+    urls:
+    - https://github.com/Altinity/helm-charts/releases/download/clickhouse-eks-0.1.5/clickhouse-eks-0.1.5.tgz
+    version: 0.1.5
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2024-09-30T20:53:49.971069163Z"
+    description: A Helm chart for ClickHouse running on AWS EKS across AZs using a
+      nodeSelector to pin resources to run on specific VMs types
+    digest: cfc710ee357c2a0e1115b7529e5b2ac2d25d713226ac7000e4c7909d05f22d2f
+    name: clickhouse-eks
+    type: application
+    urls:
+    - https://github.com/Altinity/helm-charts/releases/download/clickhouse-eks-0.1.4/clickhouse-eks-0.1.4.tgz
+    version: 0.1.4
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2024-09-30T15:39:06.042458462Z"
+    description: A Helm chart for ClickHouse running on AWS EKS across AZs using a
+      nodeSelector to pin resources to run on specific VMs types
+    digest: 42ed3b3b802f381f9a3a18c59557eddfe792d8ebedcbe753a04e8da2991677dc
+    name: clickhouse-eks
+    type: application
+    urls:
+    - https://github.com/Altinity/helm-charts/releases/download/clickhouse-eks-0.1.3/clickhouse-eks-0.1.3.tgz
+    version: 0.1.3
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2024-04-22T14:00:28.595087289Z"
+    description: A Helm chart for ClickHouse running on AWS EKS across AZs using a
+      nodeSelector to pin resources to run on specific VMs types
+    digest: 90c0b347d686e0b68a786dfdca7cb72e6062ff10d805150716a73c675bbc168d
+    name: clickhouse-eks
+    type: application
+    urls:
+    - https://github.com/Altinity/kubernetes-blueprints-for-clickhouse/releases/download/clickhouse-eks-0.1.2/clickhouse-eks-0.1.2.tgz
+    version: 0.1.2
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2024-04-20T02:48:36.302309934Z"
+    description: A Helm chart for ClickHouse running on AWS EKS across AZs using a
+      nodeSelector to pin resources to run on specific VMs types
+    digest: d54abdad670e1901c5fede1e093987034124a1567f0dbc1de91ed6f2cbc3e8e4
+    name: clickhouse-eks
+    type: application
+    urls:
+    - https://github.com/Altinity/kubernetes-blueprints-for-clickhouse/releases/download/clickhouse-eks-0.1.1/clickhouse-eks-0.1.1.tgz
+    version: 0.1.1
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2024-04-17T19:44:38.75805235Z"
+    description: A Helm chart for ClickHouse running on AWS EKS
+    digest: 9bb30dcba11305151178bcdab73a8c04a8e6f99a2ebb0f4fa75a996bffe0f838
+    name: clickhouse-eks
+    type: application
+    urls:
+    - https://github.com/Altinity/kubernetes-blueprints-for-clickhouse/releases/download/clickhouse-eks-0.1.0/clickhouse-eks-0.1.0.tgz
+    version: 0.1.0
+  clickhouse-keeper-sts:
+  - apiVersion: v2
+    appVersion: 24.3.6.48
+    created: "2024-12-02T18:24:12.484324766Z"
+    description: A ClickHouse® Keeper chart for Kubernetes
+    digest: cf1969ce930bfd72d691dab9134a28b30ff4bdb5c1c4dd20b79db015845da96d
+    name: clickhouse-keeper-sts
+    type: application
+    urls:
+    - https://github.com/Altinity/helm-charts/releases/download/clickhouse-keeper-sts-0.1.5/clickhouse-keeper-sts-0.1.5.tgz
+    version: 0.1.5
+  - apiVersion: v2
+    appVersion: 24.3.6.48
+    created: "2024-09-30T20:53:50.076764529Z"
+    description: A ClickHouse Keeper chart for Kubernetes
+    digest: 0b99a37e60e59738a01158b91de0a15a597b60617011c9f0fb6f92f6259cd9ef
+    name: clickhouse-keeper-sts
+    type: application
+    urls:
+    - https://github.com/Altinity/helm-charts/releases/download/clickhouse-keeper-sts-0.1.4/clickhouse-keeper-sts-0.1.4.tgz
+    version: 0.1.4
+  - apiVersion: v2
+    appVersion: 24.3.6.48
+    created: "2024-09-30T16:50:42.127178237Z"
+    description: A ClickHouse Keeper chart for Kubernetes
+    digest: 2eb57a5a9ba9def186440b63f1a148eced4700684e47eb29327eacfdb69b5629
+    name: clickhouse-keeper-sts
+    type: application
+    urls:
+    - https://github.com/Altinity/helm-charts/releases/download/clickhouse-keeper-sts-0.1.3/clickhouse-keeper-sts-0.1.3.tgz
+    version: 0.1.3
+  keeper-sts:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2024-07-21T21:51:00.232387329Z"
+    description: A Helm chart for setting up ClickHouse Keeper using StatefulSet
+    digest: a84e731e45cb2aa8ce2e11af50a8411d73f77b050fca40ed1d5f786f2435f5f3
+    name: keeper-sts
+    type: application
+    urls:
+    - https://github.com/Altinity/kubernetes-blueprints-for-clickhouse/releases/download/keeper-sts-0.1.2/keeper-sts-0.1.2.tgz
+    version: 0.1.2
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2024-04-22T14:00:28.717568424Z"
+    description: A Helm chart for setting up ClickHouse Keeper using StatefulSet
+    digest: 4a99fac548f6d59eb4dd2e63b43d0f725f74f07f0a6016eb94193c440177b73a
+    name: keeper-sts
+    type: application
+    urls:
+    - https://github.com/Altinity/kubernetes-blueprints-for-clickhouse/releases/download/keeper-sts-0.1.1/keeper-sts-0.1.1.tgz
+    version: 0.1.1
+generated: "2025-07-17T22:13:43.207495464Z"
