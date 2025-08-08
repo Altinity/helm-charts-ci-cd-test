@@ -69,7 +69,7 @@ jobs:
         run: |
           git fetch origin gh-pages:gh-pages
           git checkout -f gh-pages
-          cr index --owner ${{ github.repository_owner }} --git-repo $(basename ${{ github.repository }}) --pages-branch gh-pages
+          cr index --owner ${{ github.repository_owner }} --git-repo $(basename ${{ github.repository }}) --index-path .
           curl -sL https://docs.altinity.com/clickhouse-operator/index.yaml -o operator-index.yaml
           helm repo index . --merge index.yaml --merge operator-index.yaml
           rm -f operator-index.yaml
