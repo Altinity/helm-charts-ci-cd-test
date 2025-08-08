@@ -67,13 +67,11 @@ jobs:
 
       - name: Update Helm repository index
         run: |
-          cr index --owner ${{ github.repository_owner }} --git-repo $(basename ${{ github.repository }}) --index-path .
-          cp index.yaml index-previous.yaml
           git fetch origin gh-pages:gh-pages
           git checkout -f gh-pages
           curl -sL https://docs.altinity.com/clickhouse-operator/index.yaml -o operator-index.yaml
-          helm repo index . --merge index-previous.yaml --merge operator-index.yaml
-          rm -f operator-index.yaml index-previous.yaml
+          helm repo index . --url "https://github.com/${{ github.repository }}/releases/download" --merge operator-index.yaml
+          rm -f operator-index.yaml
           
           # Commit and push the updated index
           git add index.yaml
