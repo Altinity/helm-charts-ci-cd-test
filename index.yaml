@@ -3,6 +3,28 @@ entries:
   altinity-clickhouse-operator:
   - apiVersion: v2
     appVersion: 0.25.2
+    created: "2025-08-13T18:58:51.635720516Z"
+    description: 'Helm chart to deploy [altinity-clickhouse-operator](https://github.com/Altinity/clickhouse-operator).  The
+      ClickHouse Operator creates, configures and manages ClickHouse clusters running
+      on Kubernetes.  For upgrade please install CRDs separately: ```bash   kubectl
+      apply -f https://github.com/Altinity/clickhouse-operator/raw/master/deploy/helm/clickhouse-operator/crds/CustomResourceDefinition-clickhouseinstallations.clickhouse.altinity.com.yaml   kubectl
+      apply -f https://github.com/Altinity/clickhouse-operator/raw/master/deploy/helm/clickhouse-operator/crds/CustomResourceDefinition-clickhouseinstallationtemplates.clickhouse.altinity.com.yaml   kubectl
+      apply -f https://github.com/Altinity/clickhouse-operator/raw/master/deploy/helm/clickhouse-operator/crds/CustomResourceDefinition-clickhouseoperatorconfigurations.clickhouse.altinity.com.yaml   kubectl
+      apply -f https://github.com/Altinity/clickhouse-operator/raw/master/deploy/helm/clickhouse-operator/crds/CustomResourceDefinition-clickhousekeeperinstallations.clickhouse-keeper.altinity.com.yaml
+      ```'
+    digest: 436f57e042d63afe3a67522f137cafb0519b76aec8b279e8da314eb68161d8e7
+    home: https://github.com/Altinity/clickhouse-operator
+    icon: https://logosandtypes.com/wp-content/uploads/2020/12/altinity.svg
+    maintainers:
+    - email: support@altinity.com
+      name: altinity
+    name: altinity-clickhouse-operator
+    type: application
+    urls:
+    - https://github.com/Altinity/helm-charts-ci-cd-test/releases/download/0.25.3-test2/altinity-clickhouse-operator-0.25.3.tgz
+    version: 0.25.3
+  - apiVersion: v2
+    appVersion: 0.25.2
     created: "2025-08-12T18:23:57.557339571Z"
     description: 'Helm chart to deploy [altinity-clickhouse-operator](https://github.com/Altinity/clickhouse-operator).  The
       ClickHouse Operator creates, configures and manages ClickHouse clusters running
@@ -365,4 +387,4 @@ entries:
     urls:
     - https://github.com/Altinity/kubernetes-blueprints-for-clickhouse/releases/download/keeper-sts-0.1.1/keeper-sts-0.1.1.tgz
     version: 0.1.1
-generated: "2025-08-12T18:23:57.557396226Z"
+generated: "2025-08-13T18:58:51.635842305Z"
